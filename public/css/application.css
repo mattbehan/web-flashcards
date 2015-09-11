@@ -1,0 +1,118 @@
+/* Mobile First */
+
+body {
+	float: none;
+	width: auto;
+}
+
+header {
+	position: static;
+	background-color: #A1A838;
+	color: white;
+	text-align: center;
+}
+
+header nav {
+	position: static;
+	background-color: #709C34;
+	float: none;
+	margin: 1em 0;
+	padding-bottom: 0.4em;
+}
+
+header nav ul {
+	list-style: none;
+	position: static;
+	padding: 0.5em 0;
+	display: inline;
+}
+
+header nav ul li {
+	width: 20%;
+	margin: 0 6%;
+	text-align: center;
+	float: none;
+	display: inline-block;
+	position: static;
+}
+
+header nav ul li a {
+	color: #FFF2AA;
+	font-size: 0.95em;
+	padding: 5% 10%;
+	text-decoration: none;
+	display: inline-block;
+}
+
+header nav ul li a:active {
+	color: white;
+}
+
+article {
+	margin: 2%;
+	font-size: 1.1em;
+	margin-top: 1.8em;
+	background-color: #AF993C;
+	color: #3B5801;
+}
+
+article a:hover {
+	text-decoration: none;
+	color: white;
+}
+
+.flashcard {
+	background-color: #C4A200;
+	color: black;
+	width: 80%;
+}
+
+input[type=submit] {
+	background-color: #888888;
+	color: black;
+	border: 0.3em solid #888888;
+	border-radius: 0.1em;
+}
+
+/* Desktop Second */
+
+@media screen and (min-width: 600px) {
+
+	header {
+		position: relative;
+	}
+
+	nav {
+		float: right;
+		margin-top: 3%; /* Replaces 30px or 1.9em */
+		margin-right: 3%;
+	}
+
+	nav ul {
+		position: relative;
+		display: inline-table;
+	}
+
+	nav ul li {
+		float: left;
+		margin: 0 2em;
+	}
+
+	nav ul li a {
+		display: block;
+		padding: 0.3em 0.55em;
+		color: white;
+		font-size: 0.95em;
+		text-decoration: none;
+	}
+
+	nav ul li a:hover {
+		background-color: #CBD946;
+	}
+
+	nav ul li a:hover {
+		color: #232323;
+	}
+
+
+}
