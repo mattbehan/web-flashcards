@@ -1,3 +1,8 @@
 class Deck < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :creator_id, presence:true
+  validates :name, presence:true
+  validates :personal, presence:true
+
+  has_many :rounds
+  belongs_to :users
 end

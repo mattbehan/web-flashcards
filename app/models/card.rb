@@ -1,3 +1,8 @@
 class Card < ActiveRecord::Base
-  # Remember to create a migration!
+  validates :question, presence:true
+  validates :answer, presence:true
+
+  has_many :guesses
+  belongs_to :deck
+
 end
