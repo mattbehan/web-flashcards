@@ -7,7 +7,7 @@ end
 
 post "/rounds" do
   @deck = Deck.find_by(id: params[:deck_id])
-  @round = Round.new(deck_id: @deck.id, user_id: session[:user_id])
+  @round = Round.new(deck_id: @deck.id, user_id: sessions_user_id)
   if @round.save
     redirect to "/rounds/:round_id/cards/:card_id"
   else
@@ -27,4 +27,7 @@ post "/guesses" do
 end
 
 get "/guesses/:id" do
+  @guess = Guess.find_by(id: params[:id])
+  @round = Round.find_by(id: @guess.round_id)
+  @deck = current_rounds_deck
 end

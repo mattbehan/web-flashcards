@@ -11,31 +11,10 @@ get '/decks' do
   erb :"decks/index"
 end
 
-# ----------
-
-get '/sessions' do
+get "/session/viewer" do
+  session.inspect
 end
 
-# SHOW LOGIN FORM UPON USER REQUEST TO LOGIN
-get '/sessions/new' do
-  erb :'sessions/new'
+get "/session/clear" do
+  session.clear
 end
-
-# PROCESS LOGIN REQUEST
-post '/sessions' do
-  @candidate = User.find_by(email: params[:email])
-  if @candidate &&
-      @candidate.correct_password?(params[:pwd])
-    session[:uid] = @candidate.id
-    redirect '/' # or somewhere better
-  else
-    redirect '/sessions/new'
-  end
-end
-
-get '/logout' do
-  session[:uid] = nil
-  redirect '/'
-end
-
-#
