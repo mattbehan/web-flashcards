@@ -16,5 +16,4 @@ class User < ActiveRecord::Base
   def correct_password?(pwd)
     self.password == pwd
   end
-
 end
