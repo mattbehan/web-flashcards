@@ -1,23 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <!-- 
-    normalize.css removes cross-browser differences in defaults, e.g.,
-    differences in how form elements appear between Firefox and IE
-    See: http://necolas.github.com/normalize.css/
-  -->
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width">
+
   <link rel="stylesheet" href="/css/normalize.css">
-  <!--
-    application.css is where you put your styles
-  -->
   <link rel="stylesheet" href="/css/application.css">
 
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
   <script src="/js/application.js"></script>
 
-  <title></title>
+  <title>The Flashcard Game</title>
 </head>
+
 <body>
-  <%= yield %>
+  <header>
+    <h1>The Flashcard Game</h1>
+    <h3>Brought to You by the Stormin' Normans</h3>
+
+    <nav>
+      <ul>
+        <li><a href="/">Home</a></li>
+        <% if session[:user_id] && !is_guest? %>
+          <li><a href="/users/<%= session[:user_id] %>">Profile</a></li>
+          <li><a href="/logout">Sign Out</a></li>
+        <% else %>
+          <li><a href="/users/new">Sign Up</a></li>
+          <li><a href="/login">Sign In</a></li>
+        <% end %>
+      </ul>
+    </nav>
+  </header>
+
+  <article>
+    <%= yield %>
+  </article>
 </body>
+
 </html>
