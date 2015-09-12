@@ -1,5 +1,6 @@
 # SHOW SESSION USER'S STATS PROFILE
 get '/users' do
+  # code to deny back-door entry
  # @this_user = User.find_by(session[:uid])
   if authenticated?(this_user)
     @user = {username: "Jabloni"}
@@ -9,6 +10,25 @@ get '/users' do
   end
 end
 
+# NEW USER REGISTRATION
+get '/users/new' do
+  erb :"users/new"
+end
+
+# VALIDATE AND ADD NEW USER
+post '/users' do
+  @candidate = User.find_by(email: params[:email])
+  if @candidate
+    # user already exists
+    # set message
+    redirect '/users/new'
+  else
+    # create user
+    redirect '/' # or somewhere better
+  end
+end
+
+#-----------
 get '/sessions' do
 end
 
@@ -29,7 +49,11 @@ post '/sessions' do
   end
 end
 
+# PROCESS LOGOUT REQUEST
 get '/logout' do
-  session[:user_id] = nil
+  session[:user_id] = nil  # or get-guest
   redirect '/'
 end
+
+
+
