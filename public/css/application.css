@@ -122,6 +122,15 @@ input[type=submit]:hover {
 	color: #3B5801;
 }
 
+.error {
+	color: black;
+}
+
+.username {
+	color: black;
+	text-decoration: underline;
+}
+
 /* Desktop Second */
 
 @media screen and (min-width: 800px) {

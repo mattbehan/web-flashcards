@@ -1,7 +1,6 @@
 # MAINLINE CONTROLLER
 
 get '/' do
-  # set session[:user_id] = "guest" + DT stamp +rnd (100)
 	erb :index
   redirect '/decks'
 end
