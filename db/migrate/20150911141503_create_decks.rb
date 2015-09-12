@@ -4,7 +4,7 @@ class CreateDecks < ActiveRecord::Migration
       t.string :name, null:false
       t.string :subject
       t.string :personal, null:false
-      t.references :creator, index:true, null:false
+      t.references :creator, index:true
 
       t.timestamps null:false
     end

@@ -7,8 +7,7 @@ end
 
 # SHOWS AVAILABLE DECKS FOR CHOOSING
 get '/decks' do
-  # @decks = Decks.all
-  @decks = [{name: "First", id: 3},{name: "World Capitals", id: 27}]
+  @decks = Deck.all
   erb :"decks/index"
 end
 

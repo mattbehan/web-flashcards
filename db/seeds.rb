@@ -1,6 +1,6 @@
 User.create({username: "gamemaster", email: "game@master.com", password: "norman"})
 
-Deck.create({name: "World Capitals", subject: "Name the capital of the country.", personal: false})
+User.first.decks << Deck.create({name: "World Capitals", subject: "Name the capital of the country.", personal: false})
 
 Card.create([
 	{question: "France", answer: "Paris", deck_id: 1},
