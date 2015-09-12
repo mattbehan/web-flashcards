@@ -17,7 +17,7 @@ get '/users/new' do
 end
 
 # USER PROFILE
-get '/user/:id' do
+get '/users/:id' do
   if authenticated?(this_user)
     erb :"users/show"
   else
