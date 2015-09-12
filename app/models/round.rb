@@ -6,5 +6,17 @@ class Round < ActiveRecord::Base
   belongs_to :user
   has_many :guesses
 
+  def finished?
+  end
+
+  def next_card
+  end
+
+  def unguessed_cards
+  end
+
+  def get_stats
+  end
+
 end
 

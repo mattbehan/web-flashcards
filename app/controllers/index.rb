@@ -1,6 +1,7 @@
 # MAINLINE CONTROLLER
 
 get '/' do
+	erb :index
   redirect '/decks'
 end
 
