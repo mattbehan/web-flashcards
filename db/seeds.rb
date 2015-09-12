@@ -1,8 +1,8 @@
-User.create({username: "gamemaster", email: "game@master.com", password: "norman"})
+User.create!({username: "gamemaster", email: "game@master.com", password: "norman"})
 
-User.first.decks << Deck.create({name: "World Capitals", subject: "Name the capital of the country.", personal: false})
+User.first.decks << Deck.create!({name: "World Capitals", subject: "Name the capital of the country.", personal: false})
 
-Card.create([
+first_deck = Card.create!([
 	{question: "France", answer: "Paris", deck_id: 1},
 	{question: "Russia", answer: "Moscow", deck_id: 1},
 	{question: "Canada", answer: "Ottawa", deck_id: 1},
@@ -13,4 +13,11 @@ Card.create([
 	{question: "Australia", answer: "Canberra", deck_id: 1},
 	{question: "Timor-Leste", answer: "Dili", deck_id: 1},
 	{question: "Democratic Republic of Congo", answer: "Kinshasa", deck_id: 1},
+])
+
+User.first.decks << Deck.create!(name: "Easy Deck", subject: "Identify the first name of the world leader.", personal: false)
+
+second_deck = Card.create!([
+	{question: "Obama", answer: "Barack", deck_id: 2},
+	{question: "Putin", answer: "Vladimir", deck_id: 2}
 ])

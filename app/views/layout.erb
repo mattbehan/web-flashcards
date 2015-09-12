@@ -21,7 +21,7 @@
     <nav>
       <ul>
         <li><a href="/">Home</a></li>
-        <% if session[:user_id] && !is_guest? %>
+        <% if session[:user_id] %> <!-- !is_guest? -->
           <li><a href="/users/<%= session[:user_id] %>">Profile</a></li>
           <li><a href="/logout">Sign Out</a></li>
         <% else %>

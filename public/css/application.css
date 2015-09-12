@@ -95,7 +95,7 @@ input[type=submit] {
 
 
 	#logo {
-		margin-left: 7%;
+		margin-left: 3%;
 		float: left;
 		z-index: 1;
 		width: 50%;
@@ -105,7 +105,7 @@ input[type=submit] {
 	header nav {
 		position: relative;
 		float: right;
-		margin: 1.5% 3% 0 0;
+		margin: 1.5% 1.5% 0 0;
 		background-color: #A1A838;
 	}
 
@@ -117,7 +117,7 @@ input[type=submit] {
 
 	header nav ul li {
 		float: left;
-		margin: 0 0.8em;
+		margin: 0 1.4em;
 		width: auto;
 	}
 
@@ -125,16 +125,17 @@ input[type=submit] {
 		display: block;
 		padding: 0.3em 0.55em;
 		color: white;
-		font-size: 0.95em;
+		font-size: 1.1em;
 		text-decoration: none;
 	}
 
-/*	header nav ul li a:hover {
-		background-color: #CBD946;
-	}*/
+	header nav ul li a:hover {
+		background-color: #ddd;
+		border-radius: 0.3em;
+	}
 
 	header nav ul li a:hover {
-		color: #232323;
+		color: #553900;
 	}
 
 
