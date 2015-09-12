@@ -131,6 +131,11 @@ input[type=submit]:hover {
 	text-decoration: underline;
 }
 
+th, td {
+	border: 0.1em solid black;
+	padding: 0.1em 0.3em;
+}
+
 /* Desktop Second */
 
 @media screen and (min-width: 800px) {
