@@ -1,0 +1,17 @@
+<div>
+  <% if @guess.correct == true %>
+
+  <h2> YOU GOT IT </h2>
+
+  <% else %>
+
+  <h3> that ain't gonna cut it, chief </h3>
+
+  <% end %>
+
+<!-- could also just have a link here -->
+<form method="get" action="/rounds/:id/cards">
+  <input type="submit" value="...nExt CArd...">
+</form>
+
+</div>

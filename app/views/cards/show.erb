@@ -8,7 +8,7 @@
 
   <!-- where you input your answer: -->
 
-  <form method="post" post action="/guesses">
+  <form method="post" action="/guesses">
     <input name="round" type="hidden" value="<% @round.id %>">
     <input name="card" type="hidden" value="<% @card.id %>">
     <input name="guess" type="text" placeholder="make a guess!">
