@@ -65,9 +65,24 @@ article {
 	color: #3B5801;
 }
 
+.landing-page {
+	text-align: center;
+}
+
 article a {
 	color: white;
 	text-decoration: underline;
+}
+
+.decks {
+	list-style: none;
+	padding: 0;
+	font-size: 1.4em;
+}
+
+.decks li {
+	margin: 1em 0;
+	padding: 1em 0;
 }
 
 .flashcard {
@@ -139,16 +154,27 @@ input[type=submit] {
 	}
 
 	article {
-		margin: 2% 15% 0 15%;
+		margin: 2% 10% 0 10%;
+	}
+
+	.landing-page {
+		text-align: left;
 	}
 
 	article a {
-		color: #3B5801;
+		color: white;
 		text-decoration: none;
 	}
 
 	article a:hover {
-		color: white;
+		color: #3B5801;
+	}
+
+	.decks li {
+		float: left;
+		width: 30%;
+		margin-right: 3%;
+		padding: 0;
 	}
 
 }

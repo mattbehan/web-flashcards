@@ -15,9 +15,22 @@ first_deck = Card.create!([
 	{question: "Democratic Republic of Congo", answer: "Kinshasa", deck_id: 1},
 ])
 
-User.first.decks << Deck.create!(name: "Easy Deck", subject: "Identify the first name of the world leader.", personal: false)
+User.first.decks << Deck.create!(name: "World Leaders", subject: "Identify the first name of the world leader.", personal: false)
 
 second_deck = Card.create!([
 	{question: "Obama", answer: "Barack", deck_id: 2},
 	{question: "Putin", answer: "Vladimir", deck_id: 2}
+])
+
+User.first.decks << Deck.create!(name: "Landmark Metal Albums", subject: "Name the band who released the album.", personal: false)
+
+third_deck = Card.create!([
+	{question: "Paranoid", answer: "Black Sabbath", deck_id: 3},
+	{question: "Number of the Beast", answer: "Iron Maiden", deck_id: 3},
+	{question: "Ride the Lightning", answer: "Metallica", deck_id: 3},
+	{question: "British Steel", answer: "Judas Priest", deck_id: 3},
+	{question: "Blackwater Park", answer: "Opeth", deck_id: 3},
+	{question: "Appetite for Destruction", answer: "Guns N' Roses", deck_id: 3},
+	{question: "Toxicity", answer: "System of a Down", deck_id: 3},
+	{question: "Evil Empire", answer: "Rage Against the Machine", deck_id: 3}
 ])

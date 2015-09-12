@@ -1,13 +1,14 @@
 <!-- display hompage with deck list here -->
 
-<h1>Educate Yourself, Soldier!</h1>
-<h3>Select a deck to play...</h3>
+<div class="landing-page">
+	<h1>Educate Yourself, Soldier!</h1>
+	<h2>Select a deck to play...</h2>
 
-<ul class="decks">
-  <%@decks.each do |deck| %>
+	<ul class="decks">
+	  <%@decks.each do |deck| %>
 
-  <li><a href="/decks/<%=deck.id%>"><%= deck.name %></a></li>
-  
-  <% end %>
-</ul>
+	  <li><a href="/decks/<%=deck.id%>"><%= deck.name %></a></li>
+	  
+	  <% end %>
+	</ul>
 </div>
