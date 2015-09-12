@@ -1,14 +1,14 @@
 # SHOW SESSION USER'S STATS PROFILE
 # on hold pending ROUNDS
-get '/users' do
-# code to deny back-door entry
-# @this_user = User.find_by(session[:uid])
-  if authenticated?(this_user)
-    erb :"users/index"
-  else
-    redirect '/' # will (re)set user to guest
-  end
-end
+# get '/users' do
+# # code to deny back-door entry
+# # @this_user = User.find_by(session[:uid])
+#   if authenticated?
+#     erb :"users/index"
+#   else
+#     redirect '/' # will (re)set user to guest
+#   end
+# end
 
 # NEW USER REGISTRATION
 get '/users/new' do
@@ -17,8 +17,8 @@ get '/users/new' do
 end
 
 # USER PROFILE
-get '/user/:id' do
-  if authenticated?(this_user)
+get '/users/:id' do
+  if authenticated?
     erb :"users/show"
   else
     redirect '/sessions/new'

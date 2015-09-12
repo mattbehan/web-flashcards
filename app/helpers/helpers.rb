@@ -19,8 +19,8 @@ def is_guest?# (id_to_examine)
   /guest/.match(self.current_user.email)!=nil
 end
 
-def authenticated?(this_user)
-  if this_user.id == params[:id]
+def authenticated?
+  if current_user.id == params[:id]
     true
   else
     false
