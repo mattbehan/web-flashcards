@@ -4,7 +4,6 @@ get '/users' do
 # code to deny back-door entry
 # @this_user = User.find_by(session[:uid])
   if authenticated?(this_user)
-    # @user = {username: "Jabloni"}
     erb :"users/index"
   else
     redirect '/' # will (re)set user to guest
@@ -15,6 +14,15 @@ end
 get '/users/new' do
   @user = User.new
   erb :"users/new"
+end
+
+# USER PROFILE
+get '/user/:id' do
+  if authenticated?(this_user)
+    erb :"users/show"
+  else
+    redirect '/sessions/new'
+  end
 end
 
 # VALIDATE AND ADD NEW USER
