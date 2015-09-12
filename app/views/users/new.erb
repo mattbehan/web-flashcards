@@ -9,3 +9,11 @@
   <input type="submit" value="Enlist!" class="button">
 </form>
 
+	<% if @user.errors %>
+	<ul>
+  	<% @user.errors.full_messages.each do |message| %>
+    	<li class="error">Error: <%= message %> </li>
+  	<% end %>
+	</ul>
+	<% end %>
+

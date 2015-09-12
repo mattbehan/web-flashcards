@@ -44,7 +44,8 @@ post '/sessions' do
     session[:user_id] = @candidate.id
     redirect '/' # or somewhere better
   else
-    redirect '/sessions/new'
+    @error = "Email and/or password is incorrect."
+    erb :"/sessions/new"
   end
 end
 
