@@ -2,6 +2,7 @@ class User < ActiveRecord::Base
 
   has_many :rounds
   has_many :decks, foreign_key: :creator_id
+  has_one :profile
 
   validates :username, presence: true
   validates :email, presence: true, uniqueness: {case_sensitive: false}
