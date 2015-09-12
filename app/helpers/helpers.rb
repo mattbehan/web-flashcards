@@ -20,7 +20,7 @@ def is_guest?# (id_to_examine)
 end
 
 def authenticated?
-  if current_user.id == params[:id]
+  if current_user.id.to_i == params[:id].to_i
     true
   else
     false
