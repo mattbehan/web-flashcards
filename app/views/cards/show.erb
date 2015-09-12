@@ -1,17 +1,11 @@
-<div class = "flashcard">
   <p> this is a card, stupid </p>
-
-  <!-- <h4> <%= @card.deck_id.subject %> </h4> -->
 
   <p> <%= @card.question %> <p>
 
-
-  <!-- where you input your answer: -->
-
   <form method="post" action="/guesses">
-    <input name="round" type="hidden" value="<% @round.id %>">
-    <input name="card" type="hidden" value="<% @card.id %>">
-    <input name="guess" type="text" placeholder="make a guess!">
+    <input name="round" type="hidden" value="<%= @round.id %>"/>
+    <input name="card" type="hidden" value="<%= @card.id %>"/>
+    <input name="guess" type="text" placeholder="make a guess!"/>
 
     <input type="submit" value="submit your guess, jabroni">
   </form>

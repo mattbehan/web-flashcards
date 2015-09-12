@@ -1,4 +1,4 @@
-def current_rounds_deck round_id
+def current_rounds_deck(round_id)
   @current_rounds_deck ||= Round.find_by(id: round_id).deck
 end
 
