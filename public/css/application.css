@@ -4,6 +4,7 @@ body {
 	float: none;
 	width: auto;
 	background-color: #AF993C;
+	font-family: sans-serif;
 }
 
 .clearfix:after {
@@ -63,6 +64,10 @@ article {
 	font-size: 1.1em;
 	margin-top: 1.8em;
 	color: #3B5801;
+}
+
+#norms {
+	display: none;
 }
 
 .landing-page {
@@ -159,6 +164,11 @@ input[type=submit] {
 
 	.landing-page {
 		text-align: left;
+	}
+
+	#norms {
+		display: block;
+		width: 100%;
 	}
 
 	article a {
