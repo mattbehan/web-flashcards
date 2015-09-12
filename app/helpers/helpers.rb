@@ -16,5 +16,18 @@ def get_guest
 end
 
 def is_guest?# (id_to_examine)
-  /guest/.match(self.sessions_user_id.to_s)!=nil
+  /guest/.match(self.current_user.email)!=nil
+end
+
+def authenticated?
+  if current_user.id == params[:id]
+    true
+  else
+    false
+  end
+end
+
+def create_guest
+  guest = User.create(username: "guest", email: get_guest, password: "x")
+  session[:user_id] = guest.id
 end
