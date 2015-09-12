@@ -1,11 +1,14 @@
 <!-- display hompage with deck list here -->
 
-<h1>Stormin' Normans' Decks of Edufication</h1>
-<ul>
-  <%@decks.each do |deck| %>
+<div class="landing-page">
+	<h1>Educate Yourself, Soldier!</h1>
+	<h2>Select a deck to play...</h2>
 
-  <li><a href="/decks/<%=deck.id%>"><%= deck.name %></a></li>
-  
-  <% end %>
-</ul>
+	<ul class="decks">
+	  <%@decks.each do |deck| %>
 
+	  <li><a href="/decks/<%=deck.id%>"><%= deck.name %></a></li>
+	  
+	  <% end %>
+	</ul>
+</div>

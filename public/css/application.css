@@ -4,6 +4,7 @@ body {
 	float: none;
 	width: auto;
 	background-color: #AF993C;
+	font-family: sans-serif;
 }
 
 .clearfix:after {
@@ -65,9 +66,28 @@ article {
 	color: #3B5801;
 }
 
-article a:hover {
-	text-decoration: none;
+#norms {
+	display: none;
+}
+
+.landing-page {
+	text-align: center;
+}
+
+article a {
 	color: white;
+	text-decoration: underline;
+}
+
+.decks {
+	list-style: none;
+	padding: 0;
+	font-size: 1.4em;
+}
+
+.decks li {
+	margin: 1em 0;
+	padding: 1em 0;
 }
 
 .flashcard {
@@ -138,5 +158,33 @@ input[type=submit] {
 		color: #553900;
 	}
 
+	article {
+		margin: 2% 10% 0 10%;
+	}
+
+	.landing-page {
+		text-align: left;
+	}
+
+	#norms {
+		display: block;
+		width: 100%;
+	}
+
+	article a {
+		color: white;
+		text-decoration: none;
+	}
+
+	article a:hover {
+		color: #3B5801;
+	}
+
+	.decks li {
+		float: left;
+		width: 30%;
+		margin-right: 3%;
+		padding: 0;
+	}
 
 }
