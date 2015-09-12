@@ -1,7 +1,7 @@
 # MAINLINE CONTROLLER
 
 get '/' do
-  session[:user_id] = get_guest
+  # session[:user_id] = get_guest
 	erb :index
   redirect '/decks'
 end

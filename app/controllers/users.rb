@@ -28,7 +28,7 @@ end
 # VALIDATE AND ADD NEW USER
 post '/users' do
   @user = User.new(username: params[:username], email: params[:email], password: params[:pwd])
-  if @user.save
+  if /guest/.match(params[:email])==nil && @user.save
     session[:user_id] = @user.id
     redirect '/' # will (re)set user to guest
   else
