@@ -61,7 +61,7 @@ end
 
 # PROCESS LOGOUT REQUEST
 get '/logout' do
-  #session[:user_id] = nil  # or get-guest
+  session[:user_id] = nil  # or get-guest
   redirect '/' # will (re)set user to guest
 end
 
