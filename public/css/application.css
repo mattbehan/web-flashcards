@@ -65,9 +65,9 @@ article {
 	color: #3B5801;
 }
 
-article a:hover {
-	text-decoration: none;
+article a {
 	color: white;
+	text-decoration: underline;
 }
 
 .flashcard {
@@ -138,5 +138,17 @@ input[type=submit] {
 		color: #553900;
 	}
 
+	article {
+		margin: 2% 15% 0 15%;
+	}
+
+	article a {
+		color: #3B5801;
+		text-decoration: none;
+	}
+
+	article a:hover {
+		color: white;
+	}
 
 }

@@ -1,5 +1,4 @@
 class Deck < ActiveRecord::Base
-  validates :creator_id, presence:true
   validates :name, presence:true
 
   has_many :rounds
@@ -9,5 +8,5 @@ class Deck < ActiveRecord::Base
   def total_cards
   	self.cards.length
   end
-  
+
 end
