@@ -1,12 +1,13 @@
 # SHOW SESSION USER'S STATS PROFILE
+# on hold pending ROUNDS
 get '/users' do
-  # code to deny back-door entry
- # @this_user = User.find_by(session[:uid])
+# code to deny back-door entry
+# @this_user = User.find_by(session[:uid])
   if authenticated?(this_user)
-    @user = {username: "Jabloni"}
+    # @user = {username: "Jabloni"}
     erb :"users/index"
   else
-    redirect '/'
+    redirect '/' # will (re)set user to guest
   end
 end
 
@@ -21,7 +22,7 @@ post '/users' do
   @user = User.new(username: params[:username], email: params[:email], password: params[:pwd])
   if @user.save
     session[:user_id] = @user.id
-    redirect '/' # or somewhere better
+    redirect '/' # will (re)set user to guest
   else
     erb :"users/new"
   end
@@ -42,17 +43,18 @@ post '/sessions' do
   if @candidate &&
       @candidate.correct_password?(params[:pwd])
     session[:user_id] = @candidate.id
-    redirect '/' # or somewhere better
+    redirect '/' # will (re)set user to guest
   else
     @error = "Email and/or password is incorrect."
     erb :"/sessions/new"
   end
 end
 
+
 # PROCESS LOGOUT REQUEST
 get '/logout' do
-  session[:user_id] = nil  # or get-guest
-  redirect '/'
+  #session[:user_id] = nil  # or get-guest
+  redirect '/' # will (re)set user to guest
 end
 
 
