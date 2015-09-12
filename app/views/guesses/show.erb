@@ -1,5 +1,7 @@
 <div>
-  <% if @guess.correct? == true %>
+  <%= @guess.complete %>
+
+  <% if @guess.complete == true %>
 
   <h2> YOU GOT IT </h2>
 

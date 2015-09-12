@@ -33,8 +33,10 @@ class Round < ActiveRecord::Base
   end
 
   def first_corrects
-    duplicates = self.guesses.select { |guess| guesses.count(guess) > 1 }
-    self.total_guesses - duplicates.length
+    cards = []
+    self.guesses.each { |guess| cards << guess.card_id }
+    duplicates = cards.select { |card| cards.count(card) > 1 }
+    cards.length - duplicates.length
   end
 
   def total_guesses

@@ -11,7 +11,8 @@ post "/rounds" do
 end
 
 get "/rounds/:id/finished" do
-  erb :"rounds/finished"
+  @round = Round.find_by(id: params[:id])
+  erb :"rounds/finished_round"
 end
 
 
