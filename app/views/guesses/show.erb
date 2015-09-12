@@ -1,5 +1,5 @@
 <div>
-  <% if @guess.correct == true %>
+  <% if @guess.correct? == true %>
 
   <h2> YOU GOT IT </h2>
 
@@ -10,7 +10,7 @@
   <% end %>
 
 <!-- could also just have a link here -->
-<form method="post" action="/rounds/:id/cards">
+<form method="get" action="/rounds/<%= @round.id %>/cards">
   <input type="submit" value="...nExt CArd...">
 </form>
 

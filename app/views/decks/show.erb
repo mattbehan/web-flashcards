@@ -1,0 +1,16 @@
+<div>
+
+<!-- display the deck.subject -->
+<% if @deck.subject %>
+  <%= @deck.subject %>
+<% end %>
+
+<%= @deck.name %>
+<!-- display the number of cards -->
+<%= @deck.cards.count %>
+<form method="post" action="/rounds">
+  <input type="hidden" name="deck_id" value="<%= @deck.id %>" />
+  <input type="submit" value="Start a round" />
+</form>
+
+</div>
