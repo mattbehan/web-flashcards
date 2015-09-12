@@ -25,7 +25,9 @@ class Round < ActiveRecord::Base
   end
 
   def stats
-    { round_name: self.deck.name,
+    { deck_name: self.deck.name,
+      played_date: self.updated_at,
+      cards_in_deck: self.guesses.select { |guess| guess.correct? }.length,
       first_tries: self.first_corrects,
       total_guesses: self.total_guesses }
   end
