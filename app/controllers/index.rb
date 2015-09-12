@@ -6,10 +6,6 @@ get '/' do
 end
 
 # SHOWS AVAILABLE DECKS FOR CHOOSING
-get '/decks' do
-  @decks = Deck.all
-  erb :"decks/index"
-end
 
 get "/session/viewer" do
   session.inspect
