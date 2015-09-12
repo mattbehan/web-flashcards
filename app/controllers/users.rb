@@ -12,19 +12,18 @@ end
 
 # NEW USER REGISTRATION
 get '/users/new' do
+  @user = User.new
   erb :"users/new"
 end
 
 # VALIDATE AND ADD NEW USER
 post '/users' do
-  @candidate = User.find_by(email: params[:email])
-  if @candidate
-    # user already exists
-    # set message
-    redirect '/users/new'
-  else
-    # create user
+  @user = User.new(username: params[:username], email: params[:email], password: params[:pwd])
+  if @user.save
+    session[:user_id] = @user.id
     redirect '/' # or somewhere better
+  else
+    erb :"users/new"
   end
 end
 
