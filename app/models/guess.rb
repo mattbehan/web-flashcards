@@ -5,4 +5,8 @@ class Guess < ActiveRecord::Base
   belongs_to :card
   belongs_to :round
 
+  def correct?
+  	self.complete
+  end
+
 end
