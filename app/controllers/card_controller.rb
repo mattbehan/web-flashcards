@@ -1,9 +1,7 @@
 get "/rounds/:round_id/cards/:card_id" do
   @card = Card.find_by(id: params[:card_id].to_i)
   @round = Round.find_by(id: params[:round_id].to_i)
-  puts "______________________________"
-  puts @card
-  puts @round
+  @deck = @card.deck
   erb :"cards/show"
 end
 

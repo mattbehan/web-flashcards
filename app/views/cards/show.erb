@@ -1,12 +1,19 @@
-  <p> this is a card, stupid </p>
+<h1 class="pagetitle"><%= @deck.name %></h1>
 
-  <p> <%= @card.question %> <p>
+<!-- display the deck.subject -->
+<% if @deck.subject %>
+  <h3> <%= @deck.subject %> </h3>
+<% end %>
+
+<div class="flashcard">
+	<span class="question"><%= @card.question %></span>
+</div>
 
   <form method="post" action="/guesses">
     <input name="round" type="hidden" value="<%= @round.id %>"/>
     <input name="card" type="hidden" value="<%= @card.id %>"/>
-    <input name="guess" type="text" placeholder="make a guess!"/>
+    <input name="guess" type="text" placeholder="Answer here..."/>
 
-    <input type="submit" value="submit your guess, jabroni">
+    <input type="submit" value="Sir!">
   </form>
 </div>

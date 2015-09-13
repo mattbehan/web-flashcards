@@ -1,16 +1,31 @@
-<div>
+<h1 class="pagetitle"><%= @deck.name %></h1>
 
 <!-- display the deck.subject -->
+<h3>
 <% if @deck.subject %>
   <%= @deck.subject %>
 <% end %>
+<%= "(#{@deck.total_cards} cards)" %>
+</h3>
 
-<%= @deck.name %>
-<!-- display the number of cards -->
-<%= @deck.cards.count %>
+<% if session[:user_id] && !is_guest? %>
+
 <form method="post" action="/rounds">
   <input type="hidden" name="deck_id" value="<%= @deck.id %>" />
-  <input type="submit" value="Start a round" />
+  <input type="submit" value="Start game!" />
 </form>
 
-</div>
+<% else %>
+
+<form method="post" action="/rounds">
+  <input type="hidden" name="deck_id" value="<%= @deck.id %>" />
+  <input type="submit" value="Play as guest" class="inlinebutton" />
+  (Stats will not be saved.)
+</form>
+
+
+<form method="get" action="/sessions/new">
+  <input type="submit" value="Go to Log In" />
+</form>
+
+<% end %>

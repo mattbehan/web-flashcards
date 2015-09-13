@@ -1,19 +1,24 @@
-<div>
-  <%= @guess.complete %>
+<% if @guess.complete == true %>
 
-  <% if @guess.complete == true %>
+  <h1>Good work, soldier!</h1>
 
-  <h2> YOU GOT IT </h2>
+<% else %>
 
-  <% else %>
+  <h1>You’re a disgrace to the unit!</h1>
+  <p>(The correct answer was "<%= @guess.card.answer %>")</p>
 
-  <h3> that ain't gonna cut it, chief </h3>
+<% end %>
 
-  <% end %>
+<% if @round.finished? %>
 
-<!-- could also just have a link here -->
 <form method="get" action="/rounds/<%= @round.id %>/cards">
-  <input type="submit" value="...nExt CArd...">
+  <input type="submit" value="Head to debriefing...">
 </form>
 
-</div>
+<% else %>
+
+<form method="get" action="/rounds/<%= @round.id %>/cards">
+  <input type="submit" value="Next...">
+</form>
+
+<% end %>

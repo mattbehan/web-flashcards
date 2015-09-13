@@ -13,7 +13,7 @@
 
 <% current_user.rounds.each do |round| %>
 	<tr>
-    <td> <%= round.stats[:deck_name] %> </td>
+    <td class="firstcolumn"> <%= round.stats[:deck_name] %> </td>
     <td> <%= round.stats[:cards_in_deck] %> </td>
     <td> <%= round.stats[:first_tries] %> </td>
     <td> <%= round.stats[:total_guesses] %> </td>
@@ -22,5 +22,9 @@
 <% end %>
 
 </table>
+
+<form method="get" action="/">
+  <input type="submit" value="Return to Barracks">
+</form>
 
 
