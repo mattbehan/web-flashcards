@@ -12,13 +12,13 @@
 <% if @round.finished? %>
 
 <form method="get" action="/rounds/<%= @round.id %>/cards">
-  <input type="submit" value="Head to debriefing...">
+  <input type="submit" value="Head to debriefing..." autofocus />
 </form>
 
 <% else %>
 
 <form method="get" action="/rounds/<%= @round.id %>/cards">
-  <input type="submit" value="Next...">
+  <input type="submit" value="Next..." autofocus />
 </form>
 
 <% end %>

@@ -2,7 +2,7 @@
 
 <p>You played through the <%= @round.stats[:deck_name] %> deck, soldier.</p>
 
-<p>You made <%= @round.stats[:total_guesses] %> total guesses, and got <%= @round.stats[:first_tries] %> of out <%= @round.stats[:cards_in_deck] %> correct on the first try.</p>
+<p>You made <%= @round.stats[:total_guesses] %> total guesses, and got <%= @round.stats[:first_tries] %> out of <%= @round.stats[:cards_in_deck] %> correct on the first try.</p>
 
 <% if @round.stats[:efficiency] > 85 %>
 
