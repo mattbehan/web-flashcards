@@ -15,8 +15,8 @@ def get_guest
   "guest#{rand(10000)}#{DateTime.now.to_s}"
 end
 
-def is_guest?# (id_to_examine)
-  /guest/.match(self.current_user.email)!=nil
+def is_guest?
+  current_user.username == "guest"
 end
 
 def authenticated?
@@ -28,6 +28,6 @@ def authenticated?
 end
 
 def create_guest
-  guest = User.create(username: "guest", email: get_guest, password: "x")
+  guest = User.create(username: "guest", email: get_guest, password: "guest")
   session[:user_id] = guest.id
 end
