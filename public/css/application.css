@@ -139,6 +139,10 @@ input[type=submit]:hover {
 	color: #3B5801;
 }
 
+.inlinebutton {
+	margin-bottom: 0.2em;
+}
+
 .error {
 	color: black;
 }
