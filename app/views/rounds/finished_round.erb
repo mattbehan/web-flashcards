@@ -1,5 +1,19 @@
-<div>
-<% @round.stats.each do |h, v| %>
-<p><%= "#{h}: #{v}" %></p>
+<h1 class="pagetitle">End of Round Debriefing</h1>
+
+<p>You played through the <%= @round.stats[:deck_name] %> deck, soldier.</p>
+
+<p>You made <%= @round.stats[:total_guesses] %> total guesses, and got <%= @round.stats[:first_tries] %> of out <%= @round.stats[:cards_in_deck] %> correct on the first try.</p>
+
+<% if @round.stats[:first_tries].fdiv(@round.stats[:cards_in_deck]) > 0.85 %>
+
+<h3>Very impressive! You’ll be promoted in no time!</h3>
+
+<% else %>
+
+<h3>That’s pathetic! Drop down and give me 20!</h3>
+
 <% end %>
-</div>
+
+<form method="get" action="/">
+  <input type="submit" value="Return to Barracks">
+</form>

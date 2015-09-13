@@ -68,7 +68,9 @@ article {
 }
 
 #norms {
-	display: none;
+	display: block;
+	width: 100%;
+
 }
 
 .landing-page {
@@ -92,9 +94,22 @@ article a {
 }
 
 .flashcard {
-	background-color: #C4A200;
+	width: 300px;
+	height: 180px;
+	background-image: url("/images/dogtag2.png");
+	background-size: contain;
+	display: table;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.question {
+	font-weight: bold;
+	font-size: 1.5em;
+	padding: 0 20px;
 	color: black;
-	width: 80%;
+	vertical-align: middle;
+	display: table-cell;
 }
 
 input, label {
@@ -133,7 +148,19 @@ input[type=submit]:hover {
 
 th, td {
 	border: 0.1em solid black;
-	padding: 0.1em 0.3em;
+	padding: 0.3em;
+}
+
+th {
+	border-bottom: 0.2em solid black;
+}
+
+td {
+	text-align: center;
+}
+
+td.firstcolumn {
+	text-align: left;
 }
 
 /* Desktop Second */
@@ -232,6 +259,28 @@ th, td {
 	input {
 		width: auto;
 		margin: 0.5em 0 2em 0;
+	}
+
+	.inlinebutton {
+		display: inline;
+		margin-right: 1.5em;
+	}
+
+	.flashcard {
+		width: 500px;
+		height: 300px;
+		background-image: url("/images/dogtag2.png");
+		display: table;
+	  text-align: center;
+	  margin: 0;
+	}
+
+	.question {
+		font-weight: bold;
+		font-size: 2.0em;
+		color: black;
+		vertical-align: middle;
+		display: table-cell;
 	}
 
 }

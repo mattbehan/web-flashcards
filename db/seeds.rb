@@ -1,6 +1,6 @@
 User.create!({username: "gamemaster", email: "game@master.com", password: "norman"})
 
-User.first.decks << Deck.create!({name: "World Capitals", subject: "Name the capital of the country.", personal: false})
+User.first.decks << Deck.create!({name: "World Capitals", subject: "Name the capital of the country", personal: false})
 
 first_deck = Card.create!([
 	{question: "France", answer: "Paris", deck_id: 1},
@@ -15,14 +15,14 @@ first_deck = Card.create!([
 	{question: "Democratic Republic of Congo", answer: "Kinshasa", deck_id: 1},
 ])
 
-User.first.decks << Deck.create!(name: "World Leaders", subject: "Identify the first name of the world leader.", personal: false)
+User.first.decks << Deck.create!(name: "World Leaders", subject: "Identify the first name of the world leader", personal: false)
 
 second_deck = Card.create!([
 	{question: "Obama", answer: "Barack", deck_id: 2},
 	{question: "Putin", answer: "Vladimir", deck_id: 2}
 ])
 
-User.first.decks << Deck.create!(name: "Landmark Metal Albums", subject: "Name the band who released the album.", personal: false)
+User.first.decks << Deck.create!(name: "Landmark Metal Albums", subject: "Name the band that released the album", personal: false)
 
 third_deck = Card.create!([
 	{question: "Paranoid", answer: "Black Sabbath", deck_id: 3},
