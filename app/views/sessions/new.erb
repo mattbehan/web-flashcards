@@ -1,4 +1,11 @@
 <h1>Login</h1>
+
+	<% if @error %>
+	<ul>
+  	<li class="error">Error: <%= @error %> </li>
+	</ul>
+	<% end %>
+
 <form method="post" action="/sessions">
   <label for="email">Email:</label>
   <input type="email" name="email" id="email" required />
@@ -6,9 +13,3 @@
   <input type="password" name="pwd" id="password" required />
   <input type="submit" value="Report for Duty!" class="button">
 </form>
-
-	<% if @error %>
-	<ul>
-  	<li class="error">Error: <%= @error %> </li>
-	</ul>
-	<% end %>

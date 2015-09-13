@@ -1,13 +1,4 @@
 <h1>Register</h1>
-<form method="post" action="/users">
-	<label for="username">Username:</label>
-	<input type="text" name="username" id="username" required />
-  <label for="email">Email:</label>
-  <input type="email" name="email" id="email" required />
-  <label for="password">Password:</label>
-  <input type="password" name="pwd" id="password" required />
-  <input type="submit" value="Enlist!" class="button">
-</form>
 
 	<% if @user.errors %>
 	<ul>
@@ -16,4 +7,15 @@
   	<% end %>
 	</ul>
 	<% end %>
+  
+<form method="post" action="/users">
+  <label for="username">Username:</label>
+  <input type="text" name="username" id="username" required />
+  <label for="email">Email:</label>
+  <input type="email" name="email" id="email" required />
+  <label for="password">Password:</label>
+  <input type="password" name="pwd" id="password" required />
+  <input type="submit" value="Enlist!" class="button">
+</form>
+
 
