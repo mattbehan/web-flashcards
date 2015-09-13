@@ -2,7 +2,7 @@
 
 <h2 id="performance">Here is your performance assessment: </h2>
 
-<% current_user.rounds_sorted_by_deck.each do |deck_name, rounds| %>
+<% current_user.rounds_sorted_by_deck.sort.each do |deck_name, rounds| %>
 
 	<h3><%= deck_name %></h3>
 
