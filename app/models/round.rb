@@ -29,7 +29,8 @@ class Round < ActiveRecord::Base
       played_date: self.updated_at,
       cards_in_deck: self.guesses.select { |guess| guess.correct? }.length,
       first_tries: self.first_corrects,
-      total_guesses: self.total_guesses }
+      total_guesses: self.total_guesses,
+      efficiency: ((self.first_corrects.fdiv(self.guesses.select { |guess| guess.correct? }.length)) * 100).round }
   end
 
   def first_corrects

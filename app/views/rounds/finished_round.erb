@@ -4,7 +4,7 @@
 
 <p>You made <%= @round.stats[:total_guesses] %> total guesses, and got <%= @round.stats[:first_tries] %> of out <%= @round.stats[:cards_in_deck] %> correct on the first try.</p>
 
-<% if @round.stats[:first_tries].fdiv(@round.stats[:cards_in_deck]) > 0.85 %>
+<% if @round.stats[:efficiency] > 85 %>
 
 <h3>Very impressive! You’ll be promoted in no time!</h3>
 

@@ -1,27 +1,33 @@
 <h1>Look alive, <%= current_user.username %>!</h1>
 
-<p>Here is your performance assessment: </p>
+<h2 id="performance">Here is your performance assessment: </h2>
 
-<table>
-	<tr>
-		<th>Deck Name</th>
-		<th>Cards in Deck</th>
-		<th>First Guess Correct</th>
-		<th>Total Guesses</th>
-		<th>Date Played</th>
-	</tr>
+<% current_user.rounds_sorted_by_deck.each do |deck_name, rounds| %>
 
-<% current_user.rounds.each do |round| %>
-	<tr>
-    <td class="firstcolumn"> <%= round.stats[:deck_name] %> </td>
-    <td> <%= round.stats[:cards_in_deck] %> </td>
-    <td> <%= round.stats[:first_tries] %> </td>
-    <td> <%= round.stats[:total_guesses] %> </td>
-    <td> <%= round.stats[:played_date] %> </td>
-  </tr>
+	<h3><%= deck_name %></h3>
+
+	<table>
+		<tr>
+			<th>First Guess Correct</th>
+			<th>Cards in Deck</th>
+			<th>Efficiency</th>
+			<th>Total Guesses</th>
+			<th>Date Played</th>
+		</tr>
+
+	<% rounds.each do |round| %>
+		<tr>
+	    <td> <%= round.stats[:first_tries] %> </td>
+	    <td> <%= round.stats[:cards_in_deck] %> </td>
+	    <td> <%= round.stats[:efficiency] %>% </td>
+	    <td> <%= round.stats[:total_guesses] %> </td>
+	    <td> <%= round.stats[:played_date].strftime("%m/%d/%Y at %I:%M%p") %> </td>
+	  </tr>
+	<% end %>
+
+	</table>
+
 <% end %>
-
-</table>
 
 <form method="get" action="/">
   <input type="submit" value="Return to Barracks">

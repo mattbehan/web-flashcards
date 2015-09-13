@@ -146,6 +146,10 @@ input[type=submit]:hover {
 	text-decoration: underline;
 }
 
+#performance {
+	color: #FFF2A1;
+}
+
 th, td {
 	border: 0.1em solid black;
 	padding: 0.3em;
