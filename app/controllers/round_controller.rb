@@ -1,5 +1,6 @@
 post "/rounds" do
   @deck = Deck.find_by(id: params[:deck_id].to_i)
+  create_guest unless session[:user_id]
   puts "______________________________"
   puts sessions_user_id
   puts @deck.id
