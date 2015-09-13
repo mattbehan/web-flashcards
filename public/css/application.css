@@ -108,10 +108,10 @@ article a {
 	position: absolute;
 	display: table;
 	text-align: center;
-	top: 15px;
-	left: 40px;
-	height: 145px;
-	width: 240px;
+	top: 18px;
+	left: 42px;
+	height: 144px;
+	width: 228px;
 }
 
 .question {
@@ -295,10 +295,10 @@ td.firstcolumn {
 	}
 
 	.engraving {
-		top: 25px;
+		top: 35px;
 		left: 70px;
-		height: 250px;
-		width: 375px;
+		height: 230px;
+		width: 380px;
 	}
 
 	.question {
