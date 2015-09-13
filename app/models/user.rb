@@ -28,5 +28,19 @@ class User < ActiveRecord::Base
     end
   end
 
+  def rounds_sorted_by_deck
+    sorted_rounds = {}
+    self.rounds.each do |round|
+      next unless round.finished?
+      if sorted_rounds[round.deck.name]
+        sorted_rounds[round.deck.name] << round
+      else
+        sorted_rounds[round.deck.name] = [round]
+      end
+    end
+    sorted_rounds
+  end
+
+
 
 end
